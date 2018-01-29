@@ -8,6 +8,17 @@ public class Hanoi {
 
 	public Hanoi(int n){
 		// TODO ...
+            this.tourInit = new Tour(n);
+            this.tourInter = new Tour(n);
+            this.tourDest = new Tour(n);
+            
+            for(int i = n ; i > 0 ; i--){
+                Disque d = new Disque(i);
+                tourInit.empiler(d);
+            }
+            
+           //Remarque : si l'on fait appel à ce constructeur du jeu de Hanoi, la taille des tours n'est plus limitée à 3 
+           //mais à n donc le dernier test unitaire sur la taille est à faire différemment
 	}
 
 	
